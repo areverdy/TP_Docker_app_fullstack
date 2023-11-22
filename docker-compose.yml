@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  client:
+    build: ./client
+    restart: always
+    depends_on:
+      - server
+    ports:
+      - 1992:2007
+  server:
+    build: ./server
+    restart: always
+    ports:
+      - 2023:3000
